@@ -1,0 +1,107 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Login y Registro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Añade un poco de espacio en la parte superior del formulario */
+        .form-container {
+            margin-top: 50px;
+        }
+
+        /* Agrega sombra al formulario
+        .card-form {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        } */
+
+        /* Cambia el color de fondo de la pestaña activa */
+        .nav-tabs .nav-link.active {
+            background-color: #007bff;
+            /* Cambia este color según tus preferencias */
+            color: #fff;
+            /* Color del texto en la pestaña activa */
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card card-form ">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link" id="login-tab" data-toggle="tab" href="#login-form">Iniciar Sesión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" id="register-tab" data-toggle="tab"
+                                href="#register-form">Registro</a>
+                        </li>
+                    </ul>
+                    <div class="card-body shadow">
+                        <div class="tab-content ">
+                            <!-- Formulario de Inicio de Sesión -->
+                            <div class="tab-pane fade" id="login-form">
+                                <form (ngSubmit)="formSubmit()">
+                                    <div class="form-group">
+                                        <label for="loginUsername">Usuario</label>
+                                        <input [(ngModel)]="loginData.username" name="username" type="text"
+                                            class="form-control" id="loginUsername" placeholder="Ingrese su usuario">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="loginPassword">Contraseña</label>
+                                        <input [(ngModel)]="loginData.password" type="password" name="password"
+                                            class="form-control" id="loginPassword" placeholder="Ingrese su contraseña">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                                </form>
+                            </div>
+                            <!-- Formulario de Registro -->
+                            <div class="tab-pane fade show active " id="register-form">
+                                <form (ngSubmit)="registerUser()">
+                                    <div class="form-group">
+                                        <label for="registerUsername">Usuario</label>
+                                        <input [(ngModel)]="newUser.username" name="username" type="text"
+                                            class="form-control" id="registerUsername" placeholder="Usuario">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="registerPassword">Contraseña</label>
+                                        <input [(ngModel)]="newUser.password" name="password" type="password"
+                                            class="form-control" id="registerPassword" placeholder="Contraseña">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="registerEmail">Correo Electrónico</label>
+                                        <input [(ngModel)]="newUser.email" name="email" type="email"
+                                            class="form-control" id="registerEmail" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="registerName">Nombre</label>
+                                        <input [(ngModel)]="newUser.name" name="name" type="text" class="form-control"
+                                            id="registerName" placeholder="Nombre">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="registerSurnames">Apellidos</label>
+                                        <input [(ngModel)]="newUser.surnames" name="surnames" type="text"
+                                            class="form-control" id="registerSurnames" placeholder="Apellidos">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="registerBirthdate">Fecha de Nacimiento</label>
+                                        <input [(ngModel)]="newUser.birthdate" name="birthdate" type="date"
+                                            class="form-control" id="registerBirthdate">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Registrarse</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <button class="btn btn-danger" (click)="logout()">Cerrar Sesión</button>
+
+</body>
