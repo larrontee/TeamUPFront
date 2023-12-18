@@ -1,1 +1,31 @@
-<p>create-evento works!</p>
+<div class="container">
+    <h1 class="text-center">Crear Evento</h1>
+    <form (ngSubmit)="createEvent()">
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" class="form-control" name="name" id="name" [(ngModel)]="newEvent.name">
+        </div>
+        <div class="form-group">
+            <label for="description">Descripción</label>
+            <input type="text" class="form-control" name="description" id="description"
+                [(ngModel)]="newEvent.description">
+        </div>
+        <div class="form-group">
+            <label for="address">Dirección</label>
+            <input type="text" class="form-control" id="address" name="address" [(ngModel)]="newEvent.address">
+        </div>
+        <div class="form-group">
+            <label for="tipoEvent">Tipo de Evento</label>
+            <select class="form-control" name="tipoEvent" id="tipoEvent" [(ngModel)]="newEvent.tipoEvent">
+                <option value="Deporte">Deporte</option>
+                <option value="E-Sports">E-Sports</option>
+                <option value="Juegos de mesa">Juegos de mesa</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="date">Fecha del evento</label>
+            <input type="date" class="form-control" id="date" name="date" [(ngModel)]="newEvent.date">
+        </div>
+        <button type="submit" class="btn btn-primary">Crear Evento</button>
+    </form>
+</div>

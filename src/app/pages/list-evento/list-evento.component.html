@@ -1,1 +1,14 @@
-<p>list-evento works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let evento of eventos">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ evento.name }}</h5>
+                    <p class="card-text">{{ evento.description }}</p>
+                    <p class="card-text"><small class="text-muted">Fecha: {{ evento.date }}</small></p>
+                    <a [routerLink]="['/eventDetails', evento.id]" class="btn btn-primary">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,1 +1,18 @@
-<p>profile works!</p>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ user.name }}</h5>
+                    <p class="card-text">Usuario: {{ user.username }}</p>
+                    <p class="card-text">Correo: {{ user.email }}</p>
+                    <p class="card-text">Descripción: {{ user.description }}</p>
+                    <!-- Agrega más detalles del perfil del usuario según tus datos -->
+
+                    <a [routerLink]="['/editProfile', user.id]" class="btn btn-primary">Editar perfil</a>
+                    <a href="#" (click)="logout()" class="btn btn-danger ml-2">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

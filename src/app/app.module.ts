@@ -23,6 +23,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { authInterceptorProviders } from './services/auth.interceptor';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, FooterComponent],
@@ -41,11 +42,12 @@ import { authInterceptorProviders } from './services/auth.interceptor';
     ModifyEventoComponent,
     ModifyTeamComponent,
     ModifyUserComponent,
-    ProfileComponent,
     EventoComponent,
     TeamComponent,
     HttpClientModule,
     FormsModule,
+    ProfileComponent,
+    RouterModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

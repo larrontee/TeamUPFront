@@ -1,1 +1,32 @@
-<p>evento works!</p>
+<div class="container">
+    <h1 class="text-center">Detalles del Evento: {{event.name}}</h1>
+    <div class="form-group">
+        <label for="name">Nombre</label>
+        <h2>{{ event.name }}</h2>
+    </div>
+    <div class="form-group">
+        <label for="description">Descripción</label>
+        <p>{{ event.description}}</p>
+    </div>
+    <div class="form-group">
+        <label for="date">Fecha</label>
+        <p>{{ event.date}}</p>
+    </div>
+    <div class="form-group">
+        <label for="tipo">Tipo</label>
+        <p>{{ event.tipoEvent}}</p>
+    </div>
+    <div>
+        <h2>Participantes</h2>
+        <ul>
+            <li *ngFor="let participant of event.participants">
+                {{participant.name}}
+            </li>
+        </ul>
+
+    </div>
+    <button (click)="addUser()">Unirse</button>
+    <button (click)="deleteUser()">Abandonar</button>
+    <button (click)="deleteEvent()">Borrar Evento</button>
+
+</div>
